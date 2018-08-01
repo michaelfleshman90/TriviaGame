@@ -104,6 +104,7 @@ var questionBox = document.getElementById("quiz");
 var resultsBox = document.getElementById("results");
 
 document.on("click", startQuiz());
+
 function startQuiz(questionDisplay, results) {
     function questionDisplay(){
 
@@ -124,7 +125,7 @@ function startQuiz(questionDisplay, results) {
         
     }
     function results() {
-        
+        document.on("click", results())
         var answerBox = questionBox.querySelectorAll(".answers");
 
         var userAnswer = "";
@@ -145,5 +146,10 @@ function startQuiz(questionDisplay, results) {
         }
         results.innerHTML = correctAnswers + "answers correct of: " + questions.length;
     }
-
+    function submitButton() {
+        
+    }
+    submitButton.onclick = function(){
+        results()
+    }
 }
