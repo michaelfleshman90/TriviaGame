@@ -120,3 +120,15 @@ function questionDisplay(triviaQuestions){
     
     
 }
+function results() {
+    
+    var answerBox = questionBox.$("answers");
+
+    var userAnswer = "";
+    var correctAnswers = 0;
+
+    for(var i=0; i<questions.length; i++) {
+
+        userAnswer = (answerBox[i].$('input[name=question'+i+']:checked')||{}).value;
+    }
+}
