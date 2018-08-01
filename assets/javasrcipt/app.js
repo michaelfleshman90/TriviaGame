@@ -104,9 +104,9 @@ var triviaQuestions = [//question object for quiz
 var questionBox = document.getElementById("quiz");
 var resultsBox = document.getElementById("results");
 //click start to display quiz
-document.on("click", startQuiz());
+$(".startButton").on("click", startQuiz);
 //function that holds the quiz display, results, and submit button
-function startQuiz(questionDisplay, results) {
+function startQuiz() {
     //DOM display of the quiz
     function questionDisplay(){
         //setting output and answers to zero
@@ -125,7 +125,9 @@ function startQuiz(questionDisplay, results) {
         questionBox.innerHTML = output.join('');
         
         
-    }//function to calculate the results of the quiz
+    }
+    
+    //function to calculate the results of the quiz
     function results() {
         document.on("click", results())
         var answerBox = questionBox.querySelectorAll(".answers");
