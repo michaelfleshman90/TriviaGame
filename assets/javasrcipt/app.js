@@ -1,4 +1,4 @@
-var triviaQuestions = [
+var triviaQuestions = [//question object for quiz
     {
         question: "what fictional city is Batman's home?",
             answers: {
@@ -99,31 +99,33 @@ var triviaQuestions = [
             },
             correctAnswer: "d"
     },
-    ]
+]
+//target the div by id
 var questionBox = document.getElementById("quiz");
 var resultsBox = document.getElementById("results");
-
+//click start to display quiz
 document.on("click", startQuiz());
-
+//function that holds the quiz display, results, and submit button
 function startQuiz(questionDisplay, results) {
+    //DOM display of the quiz
     function questionDisplay(){
-
+        //setting output and answers to zero
         var output = [];
         var answers;
 
         for (var i=0; i<triviaQuestions.length; i++){
 
             answers = [];
-
+            //for loop adding radio buttons to the questions in memory
             for(var a=0; a<triviaQuestions[i].answers; a++) {
                 answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + tirviaQuestions[i].answers[letter] + '</label>');
-            }
+            }//creates the answer div in memory 
             ouput.push('<div class="questions">' + triviaQuestions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
-        }
+        }//takes the created question and answer divs from memory and prints to the screen
         questionBox.innerHTML = output.join('');
         
         
-    }
+    }//function to calculate the results of the quiz
     function results() {
         document.on("click", results())
         var answerBox = questionBox.querySelectorAll(".answers");
@@ -131,19 +133,17 @@ function startQuiz(questionDisplay, results) {
         var userAnswer = "";
         var correctAnswers = 0;
         var incorrectAnswers = 0;
-
+        //for loop to check and compare the user answer to the correct answer
         for(var i=0; i<questions.length; i++) {
 
             userAnswer = (answerBox[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-
+            //if user correct then increment else 
             if(userAnswer === question[i].correctAnswer){
                 correctAnswers +=1;
 
             }
-            else {
-                incorrectAnswers +=1;
-            }
-        }
+            
+        }//prints the reults to div
         results.innerHTML = correctAnswers + "answers correct of: " + questions.length;
     }
     function submitButton() {
