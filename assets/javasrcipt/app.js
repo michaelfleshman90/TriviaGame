@@ -1,38 +1,107 @@
 game ={
 
-    triviaQuestions = {
-        question1 = {
-            question: "what fictional city is Batman's home?",
-            choice1: "Gotham City",
-            choice2: "Metropolis",
-            choice3: "Central City",
-            choice4: "Themyscira",
-            correctAnswer: choice1,
-        },
-        question2 = {
-            question: "What is Superman's real name?",
-            choice1: "Clark Kent",
-            choice2: "Bobby Hill",
-            choice3: "Kal-El",
-            choice4: "Billy Mays",
-            correctAnswer: choice3,
-        },
-        question3 = {
-            question: "How old is Wonder Woman?",
-            choice1: "250yrs old",
-            choice2: "5000yrs old",
-            choice3: "28yrs old",
-            choice4: "Who knows?",
-            correctAnswer: choice2,
-        },
-        question4 = {
-            
-        } 
-        question5: "What type of dog has breeds called Scottish, Welsh, and Irish?",
-        question6: "Babe Ruth is associated with which sport?",
-        question7: "Who was known as the Maid of Orleans?",
-        question8: "In the film Babe, what type of animal was Babe?",
+    triviaQuestions = [
+    {
+        question: "what fictional city is Batman's home?",
+            answers: {
+                a: "Gotham City",
+                b: "Metropolis",
+                c: "Central City",
+                d: "Themyscira",
+            },
+            correctAnswer: "a",
     },
+    {
+        question: "What is Superman's real name?",
+            answers: {
+                a: "Clark Kent",
+                b: "Bobby Hill",
+                c: "Kal-El",
+                d: "Billy Mays",
+            },
+            correctAnswer: "c",
+    },
+    {
+        question: "How old is Wonder Woman?",
+            answers: {
+                a: "250yrs old",
+                b: "5000yrs old",
+                c: "28yrs old",
+                d: "Who knows?",
+            },
+            correctAnswer: "b",
+    },
+    {
+        question: "Who is the Green Arrows side kick?",
+            answers: {
+                a: "Blue Arrow",
+                b: "Silver Crossbow",
+                c: "Speedy",
+                d: "Robin",
+            },
+            correctAnswer: "c",
+    },
+    {
+        question: "Harley Quinn is devoted to which Batman nemesis?",
+            answers: {
+                a: "Poison Ivey",
+                b: "Scarecrow",
+                c: "Riddler",
+                d: "Joker",
+            },
+            correctAnswer: "d",
+    },
+    {
+        question: "Who was the first Flash?",
+            answers: {
+                a: "Wally West",
+                b: "Jay Garrick",
+                c: "Barry Allen",
+                d: "Michael Jackson",
+            },
+            correctAnswer: "b",
+    },    
+    {
+        question: "Who is the fastest hero in the DC universe?",
+            answers: {
+                a: "The Flash",
+                b: "Superman",
+                c: "Batman",
+                d: "Shazam",
+            },
+            correctAnswer: "a",
+    },
+    {
+        question: "Which of the green lanterns became Parallax?",
+            answers: {
+                a: "Guy Gardner",
+                b: "The Green Arrow",
+                c: "Jon Stewart",
+                d: "Hal Jordan",
+            },
+            correctAnswer: "d",
+    },
+    {
+        question: "What color is The Green Lantern weakness?",
+            answers: {
+                a: "Blue",
+                b: "Silver",
+                c: "Yellow",
+                d: "Tie-die",
+            },
+            correctAnswer: "c",
+    },
+    {
+        question: "What is Superman weak against?",
+            answers: {
+                a: "Kryptonite",
+                b: "Lois Lane",
+                c: "Humanity",
+                d: "All of the above",
+            },
+            correctAnswer: "d",
+    },
+    ]
     
 
 
