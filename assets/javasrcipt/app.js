@@ -107,14 +107,14 @@ function questionDisplay(triviaQuestions){
     var output = [];
     var answers;
 
-    for (var i=0; i<questions.length; i++){
+    for (var i=0; i<triviaQuestions.length; i++){
 
         answers = [];
 
-        for(var a=0; a<questions[i].answers; a++) {
-            answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + questions[i].answers[letter] + '</label>');
+        for(var a=0; a<triviaQuestions[i].answers; a++) {
+            answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + tirviaQuestions[i].answers[letter] + '</label>');
         }
-        ouput.push('<div class="questions">' + questions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
+        ouput.push('<div class="questions">' + triviaQuestions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
     }
     questionBox.innerHTML = output.join('');
     
@@ -126,9 +126,19 @@ function results() {
 
     var userAnswer = "";
     var correctAnswers = 0;
+    var incorrectAnswers = 0;
 
     for(var i=0; i<questions.length; i++) {
 
         userAnswer = (answerBox[i].$('input[name=question'+i+']:checked')||{}).value;
+
+        if(userAnswer === question[i].correctAnswer){
+            correctAnswers +=1;
+
+        }
+        else {
+            incorrectAnswers +=1;
+        }
     }
+    
 }
