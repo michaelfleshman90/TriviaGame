@@ -1,15 +1,13 @@
-game ={
-
-    triviaQuestions = [
+var triviaQuestions = [
     {
         question: "what fictional city is Batman's home?",
             answers: {
                 a: "Gotham City",
                 b: "Metropolis",
                 c: "Central City",
-                d: "Themyscira",
+                d: "Themyscira"
             },
-            correctAnswer: "a",
+            correctAnswer: "a"
     },
     {
         question: "What is Superman's real name?",
@@ -17,9 +15,9 @@ game ={
                 a: "Clark Kent",
                 b: "Bobby Hill",
                 c: "Kal-El",
-                d: "Billy Mays",
+                d: "Billy Mays"
             },
-            correctAnswer: "c",
+            correctAnswer: "c"
     },
     {
         question: "How old is Wonder Woman?",
@@ -27,9 +25,9 @@ game ={
                 a: "250yrs old",
                 b: "5000yrs old",
                 c: "28yrs old",
-                d: "Who knows?",
+                d: "Who knows?"
             },
-            correctAnswer: "b",
+            correctAnswer: "b"
     },
     {
         question: "Who is the Green Arrows side kick?",
@@ -37,9 +35,9 @@ game ={
                 a: "Blue Arrow",
                 b: "Silver Crossbow",
                 c: "Speedy",
-                d: "Robin",
+                d: "Robin"
             },
-            correctAnswer: "c",
+            correctAnswer: "c"
     },
     {
         question: "Harley Quinn is devoted to which Batman nemesis?",
@@ -47,9 +45,9 @@ game ={
                 a: "Poison Ivey",
                 b: "Scarecrow",
                 c: "Riddler",
-                d: "Joker",
+                d: "Joker"
             },
-            correctAnswer: "d",
+            correctAnswer: "d"
     },
     {
         question: "Who was the first Flash?",
@@ -57,9 +55,9 @@ game ={
                 a: "Wally West",
                 b: "Jay Garrick",
                 c: "Barry Allen",
-                d: "Michael Jackson",
+                d: "Michael Jackson"
             },
-            correctAnswer: "b",
+            correctAnswer: "b"
     },    
     {
         question: "Who is the fastest hero in the DC universe?",
@@ -67,9 +65,9 @@ game ={
                 a: "The Flash",
                 b: "Superman",
                 c: "Batman",
-                d: "Shazam",
+                d: "Shazam"
             },
-            correctAnswer: "a",
+            correctAnswer: "a"
     },
     {
         question: "Which of the green lanterns became Parallax?",
@@ -77,9 +75,9 @@ game ={
                 a: "Guy Gardner",
                 b: "The Green Arrow",
                 c: "Jon Stewart",
-                d: "Hal Jordan",
+                d: "Hal Jordan"
             },
-            correctAnswer: "d",
+            correctAnswer: "d"
     },
     {
         question: "What color is The Green Lantern weakness?",
@@ -87,9 +85,9 @@ game ={
                 a: "Blue",
                 b: "Silver",
                 c: "Yellow",
-                d: "Tie-die",
+                d: "Tie-die"
             },
-            correctAnswer: "c",
+            correctAnswer: "c"
     },
     {
         question: "What is Superman weak against?",
@@ -97,14 +95,28 @@ game ={
                 a: "Kryptonite",
                 b: "Lois Lane",
                 c: "Humanity",
-                d: "All of the above",
+                d: "All of the above"
             },
-            correctAnswer: "d",
+            correctAnswer: "d"
     },
     ]
+var questionBox = document.getElementById("quiz")
+document.on("click", questionDisplay())
+function questionDisplay(triviaQuestions){
+
+    var output = [];
+    var answers;
+
+    for (var i=0; i<questions.length; i++){
+
+        answers = [];
+
+        for(var a=0; a<questions[i].answers; a++) {
+            answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + questions[i].answers[letter] + '</label>');
+        }
+        ouput.push('<div class="questions">' + questions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
+    }
+    questionBox.innerHTML = output.join('');
     
-
-
-
-
+    
 }
