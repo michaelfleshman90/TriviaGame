@@ -100,45 +100,50 @@ var triviaQuestions = [
             correctAnswer: "d"
     },
     ]
-var questionBox = document.getElementById("quiz")
-document.on("click", questionDisplay())
-function questionDisplay(triviaQuestions){
+var questionBox = document.getElementById("quiz");
+var resultsBox = document.getElementById("results");
 
-    var output = [];
-    var answers;
+document.on("click", startQuiz());
+function startQuiz(questionDisplay, results) {
+    function questionDisplay(){
 
-    for (var i=0; i<triviaQuestions.length; i++){
+        var output = [];
+        var answers;
 
-        answers = [];
+        for (var i=0; i<triviaQuestions.length; i++){
 
-        for(var a=0; a<triviaQuestions[i].answers; a++) {
-            answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + tirviaQuestions[i].answers[letter] + '</label>');
+            answers = [];
+
+            for(var a=0; a<triviaQuestions[i].answers; a++) {
+                answers.push("<label>" + '<input type="radio" name="question'+[i]+'" value="'+letter+'">' + letter + ': ' + tirviaQuestions[i].answers[letter] + '</label>');
+            }
+            ouput.push('<div class="questions">' + triviaQuestions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
         }
-        ouput.push('<div class="questions">' + triviaQuestions[i].question + "</div>" + '<div class="answers">' + answers.join('') + "</div>");
+        questionBox.innerHTML = output.join('');
+        
+        
     }
-    questionBox.innerHTML = output.join('');
-    
-    
-}
-function results() {
-    
-    var answerBox = questionBox.$("answers");
+    function results() {
+        
+        var answerBox = questionBox.querySelectorAll(".answers");
 
-    var userAnswer = "";
-    var correctAnswers = 0;
-    var incorrectAnswers = 0;
+        var userAnswer = "";
+        var correctAnswers = 0;
+        var incorrectAnswers = 0;
 
-    for(var i=0; i<questions.length; i++) {
+        for(var i=0; i<questions.length; i++) {
 
-        userAnswer = (answerBox[i].$('input[name=question'+i+']:checked')||{}).value;
+            userAnswer = (answerBox[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
-        if(userAnswer === question[i].correctAnswer){
-            correctAnswers +=1;
+            if(userAnswer === question[i].correctAnswer){
+                correctAnswers +=1;
 
+            }
+            else {
+                incorrectAnswers +=1;
+            }
         }
-        else {
-            incorrectAnswers +=1;
-        }
+        results.innerHTML = correctAnswers + "answers correct of: " + questions.length;
     }
-    
+
 }
